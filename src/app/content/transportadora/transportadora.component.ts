@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Transportadora } from 'src/app/models/transportadora';
 import { TransportadoraService } from '../services/transportadora.service';
 import { AddressService } from '../services/address.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-transportadora',
@@ -32,18 +33,18 @@ export class TransportadoraComponent implements OnInit {
   }
 
   updateCep(): void {
-    of(this.address.zipCode)
-      .pipe(takeUntil(this._destroyed), debounceTime(300))
-      .subscribe({
-        next: value => {
-          if (value) {
-            this._getAddressByZip(value);
-          } else {
-            this._cleanZipCodeFields();
-          }
-        },
-        error: (err: Error) => this._toastrService.error(err.message),
-      });
+    // of(this.address.zipCode)
+    //   .pipe(takeUntil(this._destroyed), debounceTime(300))
+    //   .subscribe({
+    //     next: value => {
+    //       if (value) {
+    //         this.getAddressByZip(value);
+    //       } else {
+    //         this._cleanZipCodeFields();
+    //       }
+    //     },
+    //     error: (err: Error) => this._toastrService.error(err.message),
+    //   });
   }
 
   save(transportadora: Transportadora): void {
