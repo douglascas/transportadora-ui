@@ -1,0 +1,41 @@
+<div class="d-flex flex-row h-100 pt-4">
+  <div class="col-2 column d-flex" *ngIf="transportadoras && transportadoras.length; else transportadorasCallback;">
+    <div>
+      <fieldset>
+        <span>Transportadoras</span>
+      </fieldset>
+
+      <fieldset>
+        <span>Nome</span>
+      </fieldset>
+
+      <fieldset>
+        <span>Localização (UFs)</span>
+      </fieldset>
+
+      <fieldset>
+        <span>Localização (Municípios)</span>
+      </fieldset>
+
+      <fieldset>
+        <span>Modalidade</span>
+      </fieldset>
+    </div>
+
+  </div>
+
+  <ng-template #transportadorasCallback>
+    <p class="ml-3">Não existem transportadoras cadastradas.</p>
+  </ng-template>
+
+
+  <div class="column col">
+    <ul class="list-group" *ngFor="let transportadora of transportadoras">
+      <li class="list-group-item">
+        <div class="d-block">
+          <span>{{transportadora.id}} - {{transportadora.nome}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

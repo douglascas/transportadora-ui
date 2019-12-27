@@ -1,0 +1,101 @@
+<div class="col-6 m-auto pt-4">
+
+  <form #transportadoraForm="ngForm">
+
+    <div class="form-group">
+      <label i18n>E-mail</label>
+      <input type="text" class="form-control form-control-sm" placeholder="E-mail" [(ngModel)]="transportadora.email"
+        name="E-mail" required>
+    </div>
+
+    <div class="form-group">
+      <label i18n>Nome</label>
+      <input type="text" class="form-control form-control-sm" placeholder="Nome" [(ngModel)]="transportadora.nome"
+        name="nome" required>
+    </div>
+
+    <div class="form-group">
+      <label i18n>Empresa</label>
+      <input type="text" class="form-control form-control-sm" placeholder="Empresa" [(ngModel)]="transportadora.empresa"
+        name="empresa" required>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col">
+        <label i18n>Telefone</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Telefone"
+          [(ngModel)]="transportadora.telefone" name="telefone" required>
+      </div>
+
+      <div class="form-group col">
+        <label i18n>Celular</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Celular"
+          [(ngModel)]="transportadora.celular" name="celular">
+      </div>
+
+      <div class="form-group col">
+        <label i18n>Whatsapp</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Whatsapp"
+          [(ngModel)]="transportadora.whatsapp" name="whatsapp">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label i18n>Modalidade</label>
+      <input type="text" class="form-control form-control-sm" placeholder="Modalidade"
+        [(ngModel)]="transportadora.modal" name="modalidade" required>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-8">
+        <label i18n>CEP</label>
+        <input type="text" class="form-control form-control-sm" placeholder="CEP" [(ngModel)]="transportadora.cep"
+          name="cep" required>
+      </div>
+
+      <div class="form-group col">
+        <label i18n>Estado</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Estado" [(ngModel)]="transportadora.uf"
+          name="estado">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col">
+        <label i18n>Cidade</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Cidade" [(ngModel)]="transportadora.cidade"
+          name="cidade">
+      </div>
+
+      <div class="form-group col">
+        <label i18n>Bairro</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Bairro" [(ngModel)]="transportadora.bairro"
+          name="bairro">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-8">
+        <label i18n>Rua / Avenida</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Rua / Avenida"
+          [(ngModel)]="transportadora.rua" name="Rua / avenida">
+      </div>
+
+      <div class="form-group col">
+        <label i18n>Número</label>
+        <input type="text" class="form-control form-control-sm" placeholder="Número" [(ngModel)]="transportadora.numero"
+          name="número">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" [(ngModel)]="termoAceito" name="termo" required>
+      <label class="ml-2 mb-1">Eu aceito com os termos de serviço</label>
+    </div>
+  </form>
+
+  <div class="text-align-center">
+    <button type="button" class="btn btn-primary" (click)="save(transportadora)"
+      [disabled]="!transportadoraForm.form.valid">Cadastrar-se agora</button>
+  </div>
+</div>
